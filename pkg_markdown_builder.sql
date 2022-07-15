@@ -35,12 +35,12 @@ CREATE OR REPLACE PACKAGE pkg_markdown_builder AS
 
     /* TABLE HEADING */
     PROCEDURE add_table_heading (
-        i_md_doc    IN CLOB
+        i_md_doc    IN OUT CLOB
       , i_col_names IN t_column_values
     );
 
     PROCEDURE add_table_heading (
-        i_md_doc    IN VARCHAR2
+        i_md_doc    IN OUT VARCHAR2
       , i_col_names IN t_column_values
     );
     
