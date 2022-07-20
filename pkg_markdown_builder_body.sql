@@ -142,5 +142,10 @@ CREATE OR REPLACE PACKAGE BODY pkg_markdown_builder AS
         v_append_text := v_append_text || c_new_line;
         i_md_doc := i_md_doc || v_append_text;
     END add_table_row;
+    
+    FUNCTION markdown_escape(i_text IN VARCHAR2) RETURN VARCHAR2  AS
+    BEGIN
+        RETURN REPLACE(REPLACE(i_text, CHR(13), ' '), CHR(10), ' ');
+    END markdown_escape;
 
 END pkg_markdown_builder;

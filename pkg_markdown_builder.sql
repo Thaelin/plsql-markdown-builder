@@ -54,5 +54,7 @@ CREATE OR REPLACE PACKAGE pkg_markdown_builder AS
         i_md_doc    IN OUT VARCHAR2
       , i_col_values IN t_column_values
     );
+    
+    FUNCTION markdown_escape(i_text IN VARCHAR2) RETURN VARCHAR2 ;
 
 END pkg_markdown_builder;
