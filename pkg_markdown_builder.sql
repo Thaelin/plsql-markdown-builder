@@ -46,12 +46,12 @@ CREATE OR REPLACE PACKAGE pkg_markdown_builder AS
     
     /* TABLE ROW */
     PROCEDURE add_table_row (
-        i_md_doc    IN CLOB
+        i_md_doc    IN OUT CLOB
       , i_col_values IN t_column_values
     );
 
     PROCEDURE add_table_row (
-        i_md_doc    IN VARCHAR2
+        i_md_doc    IN OUT VARCHAR2
       , i_col_values IN t_column_values
     );
 
