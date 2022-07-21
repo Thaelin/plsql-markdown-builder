@@ -11,7 +11,7 @@ CREATE OR REPLACE PACKAGE pkg_markdown_builder AS
         
     /* HEADING */
     PROCEDURE add_heading (
-        i_md_doc        IN OUT CLOB
+        i_md_doc        IN OUT NOCOPY CLOB
       , i_heading_text  IN VARCHAR2
       , i_heading_level IN NUMBER DEFAULT 1
     );
@@ -24,7 +24,7 @@ CREATE OR REPLACE PACKAGE pkg_markdown_builder AS
 
     /* LINE */
     PROCEDURE add_line (
-        i_md_doc    IN OUT CLOB
+        i_md_doc    IN OUT NOCOPY CLOB
       , i_line_text IN VARCHAR2
     );
 
@@ -35,7 +35,7 @@ CREATE OR REPLACE PACKAGE pkg_markdown_builder AS
 
     /* TABLE HEADING */
     PROCEDURE add_table_heading (
-        i_md_doc    IN OUT CLOB
+        i_md_doc    IN OUT NOCOPY CLOB
       , i_col_names IN t_column_values
     );
 
@@ -46,7 +46,7 @@ CREATE OR REPLACE PACKAGE pkg_markdown_builder AS
     
     /* TABLE ROW */
     PROCEDURE add_table_row (
-        i_md_doc    IN OUT CLOB
+        i_md_doc    IN OUT NOCOPY CLOB
       , i_col_values IN t_column_values
     );
 
